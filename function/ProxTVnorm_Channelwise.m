@@ -1,5 +1,3 @@
-% Author: Shunsuke Ono (ono@isl.titech.ac.jp)
-
 function[Du] = ProxTVnorm_Channelwise(Du, gamma)
 
 [v, h, c, d] = size(Du);
@@ -9,13 +7,4 @@ thresh(thresh > 1) = 1;
 coef = (onemat - thresh);
 Du = repmat(coef,1,1,1,d).*Du;
 
-
-
-
-
-
-
-
-
-
-
+end
