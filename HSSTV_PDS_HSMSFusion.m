@@ -169,7 +169,8 @@ end
 
 u = CP(u);
 u_org = CP(u_org);
-quality =  QualityIndices(u, u_org, ratio);
+umax = CP(umax);
+quality = QualityIndices(u, u_org, umax, ratio);
 
 visband = [8 16 32];
 umax_vis = max(max(max(u_org(:,:,visband))));
