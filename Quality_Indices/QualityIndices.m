@@ -1,4 +1,4 @@
-function Out = QualityIndices(I_HS,I_REF,ratio)
+function Out = QualityIndices(I_HS,I_REF,umax,ratio)
 %--------------------------------------------------------------------------
 % Quality Indices
 %
@@ -24,7 +24,7 @@ Out.sam = angle_SAM;
 Out.ergas = ERGAS(I_HS,I_REF,ratio);
 Out.psnr = PSNR(I_REF,I_HS);
 Out.sammap = map;
-[Q2n_index, ~] = q2n(I_REF, I_HS, 32, 32);
+[Q2n_index, ~] = q2n(I_REF*umax, I_HS*umax, 32, 32);
 Out.q2n = Q2n_index;
 
 disp(['PSNR : ' num2str(Out.psnr,4)]);
